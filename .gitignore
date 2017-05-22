@@ -27,3 +27,18 @@
 *.exe
 *.out
 *.app
+
+# CMake ignores
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# Coverage specific ignores
+coverage
+unit_tests
