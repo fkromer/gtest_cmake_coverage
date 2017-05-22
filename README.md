@@ -1,5 +1,7 @@
 # clion_cmake_gtest_gcov_lcov
-Integration of clion, cmake, gtest, gcov and lcov
+
+Integration of cmake, cmake module CodeCoverage, gtest, gcc/g++, gcov, lcov and
+gcovr. And basic examples of different code coverage types in C/C++.
 
 ## Usage
 
