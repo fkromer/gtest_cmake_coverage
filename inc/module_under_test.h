@@ -5,6 +5,7 @@
 #include <stdbool.h>
 
 extern int StatementCoverage(void);
-extern bool DecisionCoverage(bool true_or_false);
+extern bool SingleDecisionCoverage(bool true_or_false);
+extern bool MultiDecisionCoverage(bool first_decision, bool second_decision);
 
 #endif // MODULE_UNDER_TEST_H_

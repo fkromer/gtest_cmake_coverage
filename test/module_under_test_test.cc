@@ -11,15 +11,39 @@ TEST(StatementCoverage, OnlyPossibleGoodCase) {
   EXPECT_EQ(expectedDirectTestOutput, observedDirectTestOutput);
 }
 
-TEST(DecisionCoverage, TruePath) {
+TEST(SingleDecisionCoverage, TruePath) {
   bool expectedDirectTestOutput = true;
-  bool observedDirectTestOutput = DecisionCoverage(true);
+  bool observedDirectTestOutput = SingleDecisionCoverage(true);
   EXPECT_EQ(expectedDirectTestOutput, observedDirectTestOutput);
 }
 
-TEST(DecisionCoverage, FalsePath) {
+TEST(SingleDecisionCoverage, FalsePath) {
   bool expectedDirectTestOutput = false;
-  bool observedDirectTestOutput = DecisionCoverage(false);
+  bool observedDirectTestOutput = SingleDecisionCoverage(false);
+  EXPECT_EQ(expectedDirectTestOutput, observedDirectTestOutput);
+}
+
+TEST(MultipleDecisionCoverage, FirstTruePath) {
+  bool first_decision = true;
+  bool second_decision = true;
+  bool expectedDirectTestOutput = true;
+  bool observedDirectTestOutput = MultiDecisionCoverage(first_decision, second_decision);
+  EXPECT_EQ(expectedDirectTestOutput, observedDirectTestOutput);
+}
+
+TEST(MultipleDecisionCoverage, SecondTruePath) {
+  bool first_decision = true;
+  bool second_decision = false;
+  bool expectedDirectTestOutput = true;
+  bool observedDirectTestOutput = MultiDecisionCoverage(first_decision, second_decision);
+  EXPECT_EQ(expectedDirectTestOutput, observedDirectTestOutput);
+}
+
+TEST(MultipleDecisionCoverage, ThirdTruePath) {
+  bool first_decision = false;
+  bool second_decision = true;
+  bool expectedDirectTestOutput = true;
+  bool observedDirectTestOutput = MultiDecisionCoverage(first_decision, second_decision);
   EXPECT_EQ(expectedDirectTestOutput, observedDirectTestOutput);
 }
 
